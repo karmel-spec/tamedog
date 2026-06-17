@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tame Dog Layout + Color Options</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: #f6efe0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.35;
+    }
+
+    a { color: inherit; }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1, h2, h3, .tag, .button, .nav a {
+      font-family: Impact, "Arial Black", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 78px;
+      padding: 14px clamp(16px, 4vw, 54px);
+      background: rgba(12, 12, 12, .94);
+      border-bottom: 5px solid #dd2424;
+    }
+
+    .topbar img {
+      width: clamp(120px, 14vw, 190px);
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav a {
+      border: 1px solid currentColor;
+      padding: 9px 12px;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .intro {
+      padding: clamp(30px, 6vw, 70px) clamp(18px, 5vw, 70px);
+      background: #f2ebdc;
+      color: #111;
+    }
+
+    .intro h1 {
+      max-width: 980px;
+      font-size: clamp(56px, 10vw, 138px);
+      line-height: .82;
+    }
+
+    .intro p {
+      max-width: 760px;
+      margin-top: 18px;
+      font-size: clamp(18px, 2vw, 25px);
+      font-weight: 800;
+    }
+
+    .option {
+      min-height: 100vh;
+      padding: clamp(24px, 5vw, 68px);
+      overflow: hidden;
+    }
+
+    .option-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+
+    .option-number {
+      width: fit-content;
+      padding: 7px 10px;
+      transform: rotate(-3deg);
+      font-family: Impact, "Arial Black", sans-serif;
+      text-transform: uppercase;
+    }
+
+    .option h2 {
+      margin-top: 10px;
+      font-size: clamp(50px, 9vw, 122px);
+      line-height: .82;
+    }
+
+    .option-copy {
+      max-width: 520px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .preview-shell {
+      display: grid;
+      grid-template-columns: minmax(280px, .9fr) minmax(340px, 1.1fr);
+      min-height: 590px;
+      border: 4px solid currentColor;
+      box-shadow: 9px 9px 0 var(--shadow);
+    }
+
+    .poster-side,
+    .content-side {
+      padding: clamp(18px, 4vw, 44px);
+    }
+
+    .poster-side {
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      position: relative;
+    }
+
+    .star-logo {
+      display: block;
+      width: min(100%, 560px);
+      margin: 0 auto;
+    }
+
+    .word-logo {
+      display: block;
+      width: min(70%, 270px);
+    }
+
+    .headline {
+      font-family: Impact, "Arial Black", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(50px, 9vw, 118px);
+      line-height: .78;
+    }
+
+    .line {
+      max-width: 560px;
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 900;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 15px;
+      border: 2px solid currentColor;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .content-side {
+      display: grid;
+      gap: 16px;
+      align-content: center;
+    }
+
+    .video-box {
+      min-height: 235px;
+      display: grid;
+      place-items: center;
+      border: 6px solid currentColor;
+      background-image:
+        linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.5)),
+        url("assets/instagram/crowd-red.jpg");
+      background-size: cover;
+      background-position: center;
+      font-family: Impact, "Arial Black", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(36px, 6vw, 70px);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      min-height: 150px;
+      padding: 16px;
+      border: 3px solid currentColor;
+      display: grid;
+      align-content: end;
+      gap: 8px;
+    }
+
+    .mini-card h3 {
+      font-size: 30px;
+      line-height: .9;
+    }
+
+    .mini-card p {
+      font-weight: 800;
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .photo-strip img,
+    .merch-row img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .merch-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .tag {
+      width: fit-content;
+      padding: 7px 10px;
+      transform: rotate(-3deg);
+      font-size: 18px;
+    }
+
+    .black-flyer {
+      --shadow: #d52626;
+      background: #111;
+      color: #f2ebdc;
+    }
+
+    .black-flyer .option-number,
+    .black-flyer .tag,
+    .black-flyer .button.filled {
+      background: #d52626;
+      color: #fffaf0;
+      border-color: #d52626;
+    }
+
+    .black-flyer .poster-side { background: #151515; }
+    .black-flyer .content-side { background: #080808; }
+    .black-flyer .mini-card { background: #1f1d1b; }
+
+    .red-star {
+      --shadow: #111;
+      background: #d92525;
+      color: #111;
+    }
+
+    .red-star .preview-shell { background: #f6efe0; }
+    .red-star .poster-side { background: #f6efe0; }
+    .red-star .content-side { background: #111; color: #f6efe0; }
+    .red-star .option-number,
+    .red-star .tag,
+    .red-star .button.filled { background: #111; color: #f6efe0; }
+    .red-star .mini-card { background: #d92525; color: #fff; border-color: #f6efe0; }
+
+    .zine {
+      --shadow: #111;
+      background:
+        repeating-linear-gradient(-7deg, rgba(0,0,0,.06) 0 2px, transparent 2px 9px),
+        #f7f3e8;
+      color: #0d0d0d;
+    }
+
+    .zine .preview-shell {
+      transform: rotate(-1deg);
+      background: #fffdf4;
+    }
+
+    .zine .poster-side,
+    .zine .content-side {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(0,0,0,.16) 0 1px, transparent 1px 4px),
+        #f8f4e8;
+    }
+
+    .zine .option-number,
+    .zine .tag,
+    .zine .button.filled {
+      background: #111;
+      color: #fffaf0;
+    }
+
+    .zine .mini-card {
+      background: #fff;
+      box-shadow: 5px 5px 0 #d52626;
+    }
+
+    .clean-alt {
+      --shadow: #b71f28;
+      background: #e8e2d3;
+      color: #141414;
+    }
+
+    .clean-alt .preview-shell {
+      border-width: 2px;
+      box-shadow: none;
+      background: #f8f2e4;
+    }
+
+    .clean-alt .poster-side { background: #f8f2e4; }
+    .clean-alt .content-side { background: #202020; color: #f8f2e4; }
+    .clean-alt .mini-card { border-width: 2px; background: rgba(255,255,255,.06); }
+    .clean-alt .option-number,
+    .clean-alt .tag,
+    .clean-alt .button.filled { background: #141414; color: #f8f2e4; }
+
+    .night-show {
+      --shadow: #d52626;
+      background: #10253a;
+      color: #dbe9f6;
+    }
+
+    .night-show .preview-shell {
+      background: #10253a;
+      border-color: #dbe9f6;
+    }
+
+    .night-show .poster-side {
+      background:
+        linear-gradient(120deg, rgba(213,38,38,.24), transparent 45%),
+        #08111c;
+    }
+
+    .night-show .content-side { background: #16314c; }
+    .night-show .option-number,
+    .night-show .tag,
+    .night-show .button.filled { background: #d52626; color: #fff; }
+    .night-show .mini-card { background: rgba(255,255,255,.08); }
+
+    @media (max-width: 860px) {
+      .option-head,
+      .preview-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .card-grid,
+      .photo-strip,
+      .merch-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <img src="assets/merch-art/wordmark-logo/wordmark-02-clean-white-transparent.png" alt="Tame Dog" />
+    <nav class="nav" aria-label="Preview navigation">
+      <a href="#black-flyer">Black Flyer</a>
+      <a href="#red-star">Red Star</a>
+      <a href="#zine">Zine</a>
+      <a href="#clean-alt">Clean Alt</a>
+      <a href="#night-show">Night Show</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Five Looks To Test</h1>
+      <p>Each one uses the same band photos, logos, shows, and merch, but pushes the layout and color system in a different direction.</p>
+    </section>
+
+    <section id="black-flyer" class="option black-flyer">
+      <div class="option-head">
+        <div>
+          <p class="option-number">Option 1</p>
+          <h2>Black Venue Flyer</h2>
+        </div>
+        <p class="option-copy">Dark, loud, and poster-heavy. Best if you want the site to feel like a real show wall with the merch and photos punching through.</p>
+      </div>
+      <div class="preview-shell">
+        <div class="poster-side">
+          <p class="tag">Official Band Site</p>
+          <img class="star-logo" src="assets/merch-art/star-logo/star-01-clean-transparent.png" alt="Tame Dog star logo" />
+          <p class="line">Noisy, heartfelt indie rock for friends, strangers, and anyone who stays for the last chord.</p>
+          <div class="button-row">
+            <a class="button filled" href="#shows">Shows</a>
+            <a class="button" href="#music">Listen</a>
+          </div>
+        </div>
+        <div class="content-side">
+          <div class="video-box">Live Video</div>
+          <div class="card-grid">
+            <article class="mini-card"><h3>Jun 25</h3><p>Velour BOTB</p></article>
+            <article class="mini-card"><h3>Hoodies</h3><p>$50 / Multiple Styles</p></article>
+            <article class="mini-card"><h3>Band</h3><p>Four-piece indie rock</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="red-star" class="option red-star">
+      <div class="option-head">
+        <div>
+          <p class="option-number">Option 2</p>
+          <h2>Red Star Garage</h2>
+        </div>
+        <p class="option-copy">Big logo, more red, harder contrast. This makes the star mark the center of the whole brand and gives the merch section extra bite.</p>
+      </div>
+      <div class="preview-shell">
+        <div class="poster-side">
+          <img class="star-logo" src="assets/merch-art/star-logo/star-01-clean-transparent.png" alt="Tame Dog star logo" />
+          <p class="line">A four-piece indie rock band making noisy, heartfelt songs for the room.</p>
+        </div>
+        <div class="content-side">
+          <p class="tag">Rep TameDog</p>
+          <div class="merch-row">
+            <img src="assets/merch/tamedog-shirt.avif" alt="Tame Dog shirt" />
+            <img src="assets/merch/black-hoodie.avif" alt="Tame Dog hoodie" />
+          </div>
+          <div class="button-row">
+            <a class="button filled" href="#merch">Buy Merch</a>
+            <a class="button" href="#shows">Get In The Room</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="zine" class="option zine">
+      <div class="option-head">
+        <div>
+          <p class="option-number">Option 3</p>
+          <h2>Photocopy Zine</h2>
+        </div>
+        <p class="option-copy">Messier and more handmade. Feels like photocopied flyers, basement shows, and cut-out cards, while still keeping the site easy to read.</p>
+      </div>
+      <div class="preview-shell">
+        <div class="poster-side">
+          <img class="word-logo" src="assets/merch-art/wordmark-logo/wordmark-01-clean-black-transparent.png" alt="Tame Dog wordmark" />
+          <p class="headline">Get In The Room</p>
+          <p class="line">Velour, Classic Skate, Kilby Court, and wherever the next loud room opens.</p>
+        </div>
+        <div class="content-side">
+          <div class="photo-strip">
+            <img src="assets/instagram/crowd-red.jpg" alt="Crowd at Tame Dog show" />
+            <img src="assets/instagram/live-guitar.jpg" alt="Live guitar" />
+            <img src="assets/instagram/van-mirror-band.jpg" alt="Band in van mirror" />
+          </div>
+          <div class="card-grid">
+            <article class="mini-card"><h3>Music</h3><p>Let Me Play</p></article>
+            <article class="mini-card"><h3>Photos</h3><p>Show shots</p></article>
+            <article class="mini-card"><h3>Links</h3><p>@tamedog_band</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clean-alt" class="option clean-alt">
+      <div class="option-head">
+        <div>
+          <p class="option-number">Option 4</p>
+          <h2>Clean Alt Band</h2>
+        </div>
+        <p class="option-copy">Still garage-inspired, but calmer and more premium. Good if you want fans, venues, and merch shoppers to scan everything quickly.</p>
+      </div>
+      <div class="preview-shell">
+        <div class="poster-side">
+          <p class="tag">Tame Dog</p>
+          <p class="headline">Noisy Songs. Clean Site.</p>
+          <p class="line">A cleaner layout with the same poster typography, stronger spacing, and less clutter.</p>
+        </div>
+        <div class="content-side">
+          <div class="card-grid">
+            <article class="mini-card"><h3>Music</h3><p>Stream the single</p></article>
+            <article class="mini-card"><h3>Shows</h3><p>Jul 30 / 7:00 PM</p></article>
+            <article class="mini-card"><h3>Merch</h3><p>Shirts, hoodies, stickers</p></article>
+          </div>
+          <div class="video-box">YouTube</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="night-show" class="option night-show">
+      <div class="option-head">
+        <div>
+          <p class="option-number">Option 5</p>
+          <h2>Blue/Black Night Show</h2>
+        </div>
+        <p class="option-copy">Moodier and more stage-lit. The navy keeps the black/red brand, but adds a late-night venue feel that works well with the show photos.</p>
+      </div>
+      <div class="preview-shell">
+        <div class="poster-side">
+          <img class="word-logo" src="assets/merch-art/wordmark-logo/wordmark-02-clean-white-transparent.png" alt="Tame Dog wordmark" />
+          <p class="headline">Let Me Play Out Everywhere</p>
+          <div class="button-row">
+            <a class="button filled" href="#music">Listen</a>
+            <a class="button" href="#links">Follow</a>
+          </div>
+        </div>
+        <div class="content-side">
+          <div class="photo-strip">
+            <img src="assets/instagram/live-guitar.jpg" alt="Live guitar" />
+            <img src="assets/instagram/outdoor-performance.jpg" alt="Outdoor performance" />
+            <img src="assets/headshots/isaac-sohler.jpg" alt="Isaac Sohler" />
+          </div>
+          <div class="card-grid">
+            <article class="mini-card"><h3>Velour</h3><p>Jun 25</p></article>
+            <article class="mini-card"><h3>Kilby</h3><p>Jul 30</p></article>
+            <article class="mini-card"><h3>Free</h3><p>Classic Skate</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
