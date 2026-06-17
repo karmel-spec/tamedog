@@ -232,7 +232,9 @@ h3 {
 
 .video-frame {
   position: relative;
-  min-height: min(70vh, 620px);
+  width: min(100%, 760px);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
   border: 7px solid var(--paper);
   overflow: hidden;
   background:
@@ -353,9 +355,20 @@ h3 {
   text-transform: uppercase;
 }
 
+.platform-title-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .platform-card em {
   color: var(--gray);
   font-style: normal;
+}
+
+.link-wall .platform-card strong {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .show-list {
@@ -450,11 +463,20 @@ select {
   background: var(--paper-deep);
 }
 
+.gallery-section .gallery-grid {
+  margin-top: 0;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: 1.15fr .9fr 1fr;
   grid-auto-rows: 180px;
   gap: 14px;
+}
+
+#gallery-preview .gallery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto;
 }
 
 .gallery-grid.expanded {
@@ -491,58 +513,98 @@ select {
   display: grid;
   align-items: end;
   padding: 14px;
-  border: 4px solid var(--ink);
+  border: 0;
+  aspect-ratio: 1;
   background:
-    linear-gradient(rgba(0,0,0,.04), rgba(0,0,0,.66)),
     repeating-linear-gradient(28deg, rgba(255,255,255,.28) 0 9px, transparent 9px 22px),
-    #343434;
+    var(--paper-deep);
   color: var(--paper);
   text-align: left;
   font-family: Impact, "Arial Black", sans-serif;
   font-size: 28px;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 5px 5px 0 var(--red);
+  box-shadow: none;
+}
+
+.photo-tile:hover,
+.photo-tile:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: none;
+  outline: 3px solid var(--red);
 }
 
 .photo-tile.instagram-live-guitar {
-  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.62)), url("assets/instagram/live-guitar.jpg");
-  background-size: cover;
+  background-image: url("assets/instagram/live-guitar.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 .photo-tile.instagram-merch-table {
-  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.62)), url("assets/instagram/merch-table.jpg");
-  background-size: cover;
+  background-image: url("assets/instagram/merch-table.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.photo-tile.instagram-velour-botb-poster {
+  background-image: url("assets/instagram/velour-botb-poster.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.photo-tile.instagram-kilby-cartoon-flyer {
+  background-image: url("assets/instagram/kilby-cartoon-flyer.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.photo-tile.instagram-van-mirror-band {
+  background-image: url("assets/instagram/van-mirror-band.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 .photo-tile.instagram-fan-moment {
-  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.62)), url("assets/instagram/fan-moment.jpg");
-  background-size: cover;
+  background-image: url("assets/instagram/fan-moment.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 .photo-tile.instagram-outdoor-performance {
-  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.62)), url("assets/instagram/outdoor-performance.jpg");
-  background-size: cover;
+  background-image: url("assets/instagram/outdoor-performance.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 .photo-tile.instagram-crowd-red {
-  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.62)), url("assets/instagram/crowd-red.jpg");
-  background-size: cover;
+  background-image: url("assets/instagram/crowd-red.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 .photo-tile.instagram-kilby-poster {
-  background-image: linear-gradient(rgba(0,0,0,.02), rgba(0,0,0,.62)), url("assets/instagram/kilby-poster.jpg");
-  background-size: cover;
+  background-image: url("assets/instagram/kilby-poster.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 .photo-tile.tall { grid-row: span 2; }
 .photo-tile.wide { grid-column: span 2; }
+
+#gallery-preview .photo-tile.tall,
+#gallery-preview .photo-tile.wide {
+  grid-row: span 1;
+  grid-column: span 1;
+}
 
 .member-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -684,10 +746,6 @@ select {
 
   .hero {
     min-height: 0;
-  }
-
-  .video-frame {
-    min-height: 360px;
   }
 
   .section-head,
