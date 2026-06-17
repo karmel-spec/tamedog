@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tame Dog | Photo Gallery</title>
+  <meta name="description" content="Favorite Tame Dog show photos, live shots, and behind-the-scenes moments." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="paper-noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Tame Dog home">
+      <span class="logo-stamp logo-image"><img src="assets/tame-dog-wordmark.jpg" alt="Tame Dog logo" /></span>
+      <span>Tame Dog</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="index.html#music">Music</a>
+      <a href="index.html#shows">Shows</a>
+      <a href="index.html#merch">Merch</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#band">Band</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="stamp red">Photo Gallery</p>
+      <h1>Show<br>Shots</h1>
+      <p class="hero-line">Favorite photos from Tame Dog shows, backstage corners, venue walls, setlists, and crowd moments.</p>
+    </section>
+
+    <section class="section gallery-section">
+      <div class="section-head">
+        <div>
+          <p class="stamp">Live Archive</p>
+          <h2>Favorite Frames</h2>
+        </div>
+        <a class="button dark" href="mailto:photos@tamedog.com">Submit Photos</a>
+      </div>
+
+      <div class="filter-row" aria-label="Gallery filters">
+        <button class="filter-button active" type="button" data-filter="all">All</button>
+        <button class="filter-button" type="button" data-filter="live">Live</button>
+        <button class="filter-button" type="button" data-filter="band">Band</button>
+        <button class="filter-button" type="button" data-filter="behind">Behind The Scenes</button>
+      </div>
+
+      <div class="gallery-grid expanded" aria-label="Favorite Tame Dog show photos">
+        <button class="photo-tile tall instagram-crowd-red" type="button" data-category="live" data-caption="Velour crowd / from @tamedog_band Instagram">Velour Crowd</button>
+        <button class="photo-tile instagram-live-guitar" type="button" data-category="band" data-caption="Live guitar shot / from @tamedog_band Instagram">Live Guitar</button>
+        <button class="photo-tile instagram-merch-table" type="button" data-category="behind" data-caption="Tame Dog merch table / from @tamedog_band Instagram">Merch Table</button>
+        <button class="photo-tile wide instagram-outdoor-performance" type="button" data-category="live" data-caption="Outdoor performance in Provo / from @tamedog_band Instagram">Outdoor Set</button>
+        <button class="photo-tile instagram-fan-moment" type="button" data-category="behind" data-caption="Fan moment / from @tamedog_band Instagram">Fan Moment</button>
+        <button class="photo-tile instagram-kilby-poster" type="button" data-category="behind" data-caption="Kilby Court show promo / from @tamedog_band Instagram">Kilby Poster</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>Tame Dog</strong>
+    <span>Garage poster style / show photo archive</span>
+    <a href="index.html">Back Home</a>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Photo preview">
+    <button class="close-lightbox" type="button">Close</button>
+    <div class="lightbox-art"></div>
+    <p class="lightbox-caption"></p>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
