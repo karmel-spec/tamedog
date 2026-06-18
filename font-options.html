@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tame Dog Bio Font Options</title>
+  <style>
+    :root {
+      --ink: #111;
+      --paper: #f6efe0;
+      --red: #d92525;
+      --white: #fffaf0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--red);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px clamp(24px, 5vw, 72px);
+      background: #111;
+      color: var(--paper);
+      border-bottom: 5px solid var(--paper);
+    }
+
+    header img {
+      width: clamp(180px, 22vw, 330px);
+      height: 86px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    header a {
+      color: var(--paper);
+      border: 2px solid currentColor;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    main {
+      padding: clamp(32px, 5vw, 72px);
+    }
+
+    .intro {
+      max-width: 1100px;
+      margin: 0 0 34px;
+    }
+
+    .stamp {
+      display: inline-block;
+      margin: 0 0 16px;
+      padding: 9px 14px;
+      background: var(--ink);
+      color: var(--paper);
+      transform: rotate(-3deg);
+      font-family: Impact, "Arial Black", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(20px, 2vw, 30px);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: clamp(54px, 8vw, 120px);
+      line-height: .85;
+      text-transform: uppercase;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(18px, 2.4vw, 34px);
+    }
+
+    .font-card {
+      min-height: 300px;
+      display: grid;
+      gap: 20px;
+      align-content: start;
+      padding: clamp(22px, 3vw, 40px);
+      background: var(--paper);
+      border: 4px solid var(--ink);
+      box-shadow: 8px 8px 0 #111;
+    }
+
+    .font-card h2 {
+      margin: 0;
+      font-family: Impact, "Arial Black", sans-serif;
+      font-size: clamp(32px, 3.2vw, 56px);
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .font-card small {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: #4b4038;
+      text-transform: uppercase;
+    }
+
+    .sample {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(30px, 3vw, 48px);
+      line-height: 1.18;
+      font-weight: 800;
+    }
+
+    .font-1 .sample { font-family: Inter, Arial, Helvetica, sans-serif; }
+    .font-2 .sample { font-family: "Arial Black", Arial, Helvetica, sans-serif; font-weight: 900; line-height: 1.05; }
+    .font-3 .sample { font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; font-weight: 700; }
+    .font-4 .sample { font-family: "Cooper Black", "Cooper Std Black", Georgia, serif; font-weight: 900; line-height: 1.08; }
+    .font-5 .sample { font-family: "Courier Prime", "Courier New", Courier, monospace; font-weight: 700; line-height: 1.12; }
+    .font-6 .sample { font-family: Georgia, "Times New Roman", serif; font-weight: 700; line-height: 1.16; }
+    .font-7 .sample { font-family: Oswald, "Arial Narrow", "Franklin Gothic Medium", Arial, sans-serif; font-stretch: condensed; font-weight: 900; text-transform: uppercase; line-height: 1.05; }
+    .font-8 .sample { font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif; font-weight: 800; }
+    .font-9 .sample { font-family: Impact, "Arial Black", sans-serif; font-weight: 900; text-transform: uppercase; line-height: 1; }
+    .font-10 .sample { font-family: Rockwell, "Rockwell Extra Bold", Georgia, serif; font-weight: 900; line-height: 1.08; }
+
+    @media (max-width: 880px) {
+      header {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/merch-art/wordmark-logo/wordmark-02-clean-white-transparent.png" alt="Tame Dog logo" />
+    <a href="index.html#home">Back To Site</a>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="stamp">Bio Font Tests</p>
+      <h1>Pick The Homepage Bio Font</h1>
+    </section>
+
+    <section class="option-grid" aria-label="Homepage bio font options">
+      <article class="font-card font-1">
+        <h2>1. Clean Indie Sans <small>Inter / Arial fallback</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-2">
+        <h2>2. Classic Rock Poster <small>Arial Black</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-3">
+        <h2>3. Garage Zine <small>Franklin Gothic Medium</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-4">
+        <h2>4. Retro Venue Flyer <small>Cooper Black</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-5">
+        <h2>5. Typewriter Band Bio <small>Courier Prime / Courier fallback</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-6">
+        <h2>6. Sharp Editorial <small>Georgia</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-7">
+        <h2>7. Condensed Poster <small>Oswald / narrow fallback</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-8">
+        <h2>8. Indie Soft Sans <small>Avenir Next</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-9">
+        <h2>9. Punk Label Copy <small>Impact</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+      <article class="font-card font-10">
+        <h2>10. Handbill Serif <small>Rockwell</small></h2>
+        <p class="sample">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
