@@ -500,10 +500,14 @@ h3 {
 }
 
 .product-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 18px;
   background: var(--paper);
-  align-content: start;
+}
+
+.product-card .button {
+  margin-top: auto;
 }
 
 .product-card p,
