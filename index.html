@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tame Dog | Official Site</title>
-  <meta name="description" content="Official site for Tame Dog. Shows, music, merch, and band member links." />
-  <link rel="stylesheet" href="styles.css?v=20260617-bio-font-7" />
+  <meta name="description" content="Official site for Tame Dog. Music and merch." />
+  <link rel="stylesheet" href="styles.css?v=20260923-redesign-1" />
 </head>
 <body>
   <div class="paper-noise" aria-hidden="true"></div>
@@ -16,26 +16,16 @@
     </a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="#music">Music</a>
-      <a href="#shows">Shows</a>
-      <a href="#merch">Merch</a>
-      <a href="#band">Band</a>
-      <a href="#links">Links</a>
+      <a href="music.html">Music</a>
+      <a href="merch.html">Merch</a>
     </nav>
   </header>
 
   <main id="home">
     <section class="hero" aria-label="Tame Dog homepage">
-      <div class="hero-copy">
-        <p class="stamp">Official Band Site</p>
-        <h1 class="hero-logo-heading">
-          <img src="assets/merch-art/star-logo/star-01-clean-transparent.png" alt="Tame Dog" />
-        </h1>
-        <p class="hero-line">A four-piece indie rock band making noisy, heartfelt songs for venues, friends, strangers, and anyone who stays for the last chord.</p>
-        <div class="button-row">
-          <a class="button dark" href="#shows">See Shows</a>
-          <a class="button light" href="#music">Listen Now</a>
-        </div>
+      <div id="music" class="music-intro">
+        <p class="music-intro-text">FUSK OUT NOW</p>
+        <a class="button dark" href="https://distrokid.com/hyperfollow/tamedog1/fusk?ref=release" target="_blank" rel="noreferrer">Stream</a>
       </div>
 
       <div class="video-half" aria-label="Looping YouTube music video">
@@ -47,178 +37,25 @@
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen>
           </iframe>
+          <a class="video-click-catcher" href="https://www.youtube.com/@tamedog" target="_blank" rel="noreferrer" aria-label="Open the Tame Dog YouTube channel"></a>
         </div>
-      </div>
-    </section>
-
-    <section id="music" class="section torn-top">
-      <div class="section-head">
-        <p class="stamp red">Music</p>
-        <h2>Let Me Play Out Everywhere</h2>
-      </div>
-      <div class="music-grid">
-        <div class="platform-card">
-          <a class="platform-title-link" href="https://music.youtube.com/watch?v=u5x2pnPxJDY" target="_blank" rel="noreferrer">
-            <span>YouTube</span>
-          </a>
-          <em>Stream the single on YouTube Music</em>
-        </div>
-        <div class="platform-card">
-          <a class="platform-title-link" href="https://open.spotify.com/album/30GGkjpLR5tPy0xQMQqvSJ" target="_blank" rel="noreferrer">
-            <span>Spotify</span>
-          </a>
-          <em>Stream the single on Spotify</em>
-        </div>
-        <div class="platform-card">
-          <a class="platform-title-link" href="https://music.apple.com/us/album/let-me-play-single/1863250540" target="_blank" rel="noreferrer">
-            <span>Apple Music</span>
-          </a>
-          <em>Stream the single on Apple Music</em>
-        </div>
-        <div class="platform-card">
-          <span>Amazon Music</span>
-          <em>Find the single on Amazon Music</em>
-        </div>
-      </div>
-    </section>
-
-    <section id="links" class="section link-wall">
-      <div class="section-head">
-        <p class="stamp red">Official Links</p>
-        <h2>Follow The Band</h2>
-      </div>
-      <div class="music-grid official-link-grid">
-        <a class="platform-card" href="https://www.instagram.com/tamedog_band/" target="_blank" rel="noreferrer">
-          <span>Instagram</span>
-          <strong>@tamedog_band</strong>
-          <em>Band posts, show photos, flyers, announcements</em>
-        </a>
-        <a class="platform-card" href="https://www.youtube.com/@tamedog" target="_blank" rel="noreferrer">
-          <span>YouTube</span>
-          <strong>@tamedog</strong>
-          <em>Official channel</em>
-        </a>
-        <a class="platform-card" href="https://www.tiktok.com/@tamedog_band" target="_blank" rel="noreferrer">
-          <span>TikTok</span>
-          <strong>@tamedog_band</strong>
-          <em>Clips, songs, show moments, and band posts</em>
-        </a>
-      </div>
-    </section>
-
-    <section id="shows" class="section black-band">
-      <div class="section-head">
-        <p class="stamp">Upcoming Shows</p>
-        <h2>Get In The Room</h2>
-      </div>
-      <div class="show-list">
-        <article class="show-card">
-          <div class="show-date"><span>Jun</span>25</div>
-          <div>
-            <h3>Velour BOTB</h3>
-            <p>Velour / 7:30 PM</p>
-          </div>
-          <span class="button light">Tickets At The Door</span>
-        </article>
-        <article class="show-card">
-          <div class="show-date"><span>Jun</span>26</div>
-          <div>
-            <h3>Classic Skate</h3>
-            <p>Classic Skate / 7:00 PM</p>
-          </div>
-          <span class="button light">Free</span>
-        </article>
-        <article class="show-card">
-          <div class="show-date"><span>Jul</span>30</div>
-          <div>
-            <h3>Imaginary Friends</h3>
-            <p>Kilby Court / 7:00 PM</p>
-          </div>
-          <span class="button light">Tickets At The Door</span>
-        </article>
-        <article class="show-card muted-card">
-          <div class="show-date"><span>TBA</span>+</div>
-          <div>
-            <h3>More Dates Soon</h3>
-            <p>Add new shows in the site data and each one gets a Venmo ticket link.</p>
-          </div>
-          <a class="button outline" href="mailto:booking@tamedog.com">Booking</a>
-        </article>
       </div>
     </section>
 
     <section id="merch" class="section">
-      <div class="section-head with-action">
-        <div>
-          <p class="stamp red">Merch</p>
-          <h2><a href="https://tamedog-shop.fourthwall.com/collections/all" target="_blank" rel="noreferrer">Rep TameDog</a></h2>
-        </div>
+      <div class="section-head centered">
+        <h2>Can You Catch The Flying Shirt?</h2>
       </div>
-      <div class="merch-grid">
-        <article class="product-card">
-          <img class="product-image" src="assets/merch/tamedog-shirt.avif" alt="Tame Dog T-shirt" />
-          <h3>T Shirts</h3>
-          <p>$25-35 / Multiple Styles</p>
-          <select aria-label="Logo Tee size">
-            <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
-          </select>
-          <a class="button dark" href="https://tamedog-shop.fourthwall.com/products/heavyweight-black-t-3" target="_blank" rel="noreferrer">Buy on Fourthwall</a>
-        </article>
-        <article class="product-card">
-          <img class="product-image" src="assets/merch/black-hoodie.avif" alt="Black Tame Dog hoodie" />
-          <h3>Hoodies</h3>
-          <p>$50 / Multiple Styles</p>
-          <select aria-label="Hoodies size">
-            <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
-          </select>
-          <a class="button dark" href="https://tamedog-shop.fourthwall.com/products/black-hoodie" target="_blank" rel="noreferrer">Buy on Fourthwall</a>
-        </article>
-        <article class="product-card">
-          <img class="product-image dark-product-image" src="assets/merch/tamedog-stickers.avif" alt="Tame Dog stickers" />
-          <h3>Stickers</h3>
-          <p>$6</p>
-          <a class="button dark" href="https://tamedog-shop.fourthwall.com/products/3x3-sticker" target="_blank" rel="noreferrer">Buy on Fourthwall</a>
-        </article>
+      <div class="flying-shirt-stage">
+        <a class="flying-shirt" href="merch.html" aria-label="I Love Tame Dog tee — see it on the merch page">
+          <img src="assets/merch/i-love-tame-dog-tee-transparent.png" alt="I Love Tame Dog tee" />
+        </a>
+        <img class="miss-popup" src="assets/merch/i-love-tamedog-popup.png" alt="" aria-hidden="true" />
       </div>
     </section>
 
-    <section id="band" class="section black-band">
-      <div class="section-head">
-        <h2>Band Members</h2>
-      </div>
-      <div class="member-grid">
-        <article class="member-card">
-          <p class="member-role">Lead Singer</p>
-          <img class="member-headshot" src="assets/headshots/grant-shumway.jpg" alt="Grant Shumway headshot" />
-          <h3>Grant Shumway</h3>
-          <p>Front-of-room energy, melody, and the voice fans remember on the drive home.</p>
-          <a href="https://www.instagram.com/grantshumway/" target="_blank" rel="noreferrer">@grantshumway</a>
-        </article>
-        <article class="member-card">
-          <p class="member-role">Drummer</p>
-          <img class="member-headshot" src="assets/headshots/brig-larson.jpg" alt="Brig Larson headshot" />
-          <h3>Brig Larson</h3>
-          <p>The engine room, the snap, and the part that makes the posters shake.</p>
-          <a href="https://www.instagram.com/briglarson07/" target="_blank" rel="noreferrer">@briglarson07</a>
-        </article>
-        <article class="member-card">
-          <p class="member-role">Lead Guitar</p>
-          <img class="member-headshot" src="assets/headshots/dallen-price.jpg" alt="Dallen Price headshot" />
-          <h3>Dallen Price</h3>
-          <p>Hooks, texture, and the loud bright line cutting through the set.</p>
-          <a href="https://www.instagram.com/itz_dallen_37/" target="_blank" rel="noreferrer">@itz_dallen_37</a>
-        </article>
-        <article class="member-card">
-          <p class="member-role">Bass Player</p>
-          <img class="member-headshot" src="assets/headshots/isaac-sohler.jpg" alt="Isaac Sohler headshot" />
-          <h3>Isaac Sohler</h3>
-          <p>Low-end glue, groove, and the reason the choruses hit heavier.</p>
-          <a href="https://www.instagram.com/isaac_sohler/" target="_blank" rel="noreferrer">@isaac_sohler</a>
-        </article>
-      </div>
-    </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20260923-miss-popup-1"></script>
 </body>
 </html>
