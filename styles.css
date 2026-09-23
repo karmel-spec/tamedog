@@ -840,32 +840,21 @@ select {
   }
 
   .logo-stamp.logo-image {
-    width: clamp(140px, 46vw, 260px);
-    height: clamp(34px, 11vw, 64px);
+    width: clamp(90px, 30vw, 150px);
+    height: clamp(22px, 7.5vw, 38px);
   }
 
   .menu-button {
     display: inline-flex;
-  }
-
-  /* When a back button shares the header with the logo (music.html,
-     merch.html), there isn't room for a full-size logo too — shrink it
-     and tighten the buttons so nothing overlaps. */
-  .back-button ~ .brand .logo-stamp.logo-image {
-    width: clamp(90px, 30vw, 150px);
-    height: clamp(22px, 7.5vw, 38px);
+    min-width: 0;
+    padding: 8px 10px;
+    font-size: 15px;
   }
 
   .back-button {
     min-width: 0;
     padding: 8px 10px;
     font-size: 16px;
-  }
-
-  .back-button ~ .menu-button {
-    min-width: 0;
-    padding: 8px 10px;
-    font-size: 15px;
   }
 
   .site-nav {
@@ -884,7 +873,7 @@ select {
 
   .site-nav.open {
     display: grid;
-    justify-content: center;
+    justify-content: end;
   }
 
   .hero,
